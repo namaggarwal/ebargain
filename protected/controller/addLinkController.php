@@ -1,6 +1,7 @@
 <?php
 
 require_once("/protected/view/linkAddedView.php");
+require_once("/protected/view/homeView.php");
 require_once("/protected/model/tblLinkModel.php");
 require_once("/protected/model/tblContactModel.php");
 
@@ -44,8 +45,10 @@ class addLinkController extends baseController{
 			$this->view  = new linkAddedView();
 			$this->view->init($this->viewData);
 		}else{
-
-			throw new Exception("Not a valid Host",10000);
+			$this->view  = new homeView();
+			$this->viewData = $this->data;
+			$this->viewData["ERROR"] = "Oops we are not currently supporting this website.";
+			$this->view->init($this->viewData);			
 		}
 
 	}

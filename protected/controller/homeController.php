@@ -12,6 +12,7 @@ class homeController {
 
 	public function init($data){
 		$this->data = $data;
+		$this->viewData = $data;
 		$this->view  = new homeView();
 		$this->view->init($this->viewData);
 	}

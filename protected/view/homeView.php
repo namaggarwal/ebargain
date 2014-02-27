@@ -8,6 +8,9 @@ class homeView extends baseView{
 
 	public function init($data){
 
+		$data["url"]   = isset($data["url"])?$data["url"]:"";
+		$data["price"] = isset($data["price"])?$data["price"]:"";
+		$data["email"] = isset($data["email"])?$data["email"]:"";
 		$this->renderPage($data);
 	}
 
@@ -31,7 +34,9 @@ class homeView extends baseView{
 		$html .= "<div class='head-text'>";
 		$html .= "<h1>Get Notified on Lowest Price</h1>";
 		$html .= "</div>";
+		
 		$html .= "<div>";
+
 		$html .= "<div id='infoBox'>";
 		$html .= "<div class='websiteName'>";
 		$html .= "Flipkart";
@@ -55,14 +60,20 @@ class homeView extends baseView{
 		$html .= "</div>";		
 		$html .= "</div>";
 		$html .= "<form id='frmInpLink' action='".config::BASE_URL."/addLink' method='POST'>";
+		if(isset($params["ERROR"])){
+			$html .= "<div class='error-text'>";
+			$html .= $params["ERROR"];
+			$html .= "</div>";	
+		}
+		
 		$html .= "<div>";
-		$html .= "<input type='url' id='inpLink' name='inpLink' required placeholder='Enter a link'/>";
+		$html .= "<input type='url' id='inpLink' name='inpLink' required placeholder='Enter a link' value='".$params["url"]."'/>";
 		$html .= "</div>";
 		$html .= "<div>";
-		$html .= "<input type='number' id='inpTarget' name='inpTarget' required placeholder='Enter your target Price' />";
+		$html .= "<input type='number' id='inpTarget' name='inpTarget' required placeholder='Enter your target Price' value='".$params["price"]."' />";
 		$html .= "</div>";
 		$html .= "<div>";
-		$html .= "<input type='email' id='inpEmail' name='inpEmail' required placeholder='Enter your Email to get notified.'/>";
+		$html .= "<input type='email' id='inpEmail' name='inpEmail' required placeholder='Enter your Email to get notified.' value='".$params["email"]."'/>";
 		$html .= "</div>";
 		$html .= "<div>";
 		$html .= "<input class='btnSubmit' type='submit' value='Notify me'>";
