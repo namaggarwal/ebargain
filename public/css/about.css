@@ -1,0 +1,26 @@
+#abtCont{width: 86%;margin-left:8%;margin-top:2%;}
+#abtRight{float: right;width: 28%;}
+#abtRight a{text-decoration: none;color: black;font-size: 14px;}
+#abtRight a:hover{text-decoration: underline;color: orange;}
+#abtRight p{margin-bottom: 2px;}
+#abtRight .mail-head{margin: 0px;}
+#abtRight .mail{margin: 2px 6px;}
+#abtRight .img-cont{height:254px;border: 1px solid;width:220px;}
+
+#social-cont{overflow: auto;margin-top: 20px;}
+#social-cont a.social-link{float: left;width: 18%;cursor: pointer;margin-right:2%;text-align: center;background-color:#EEE;color: #666;padding: 4px;border-radius: 4px;-moz-border-radius:4px;}
+#social-cont a.social-link:hover{text-decoration: none;color: white;}
+#social-cont a.social-link.facebook:hover{background-color: #3B5998;}
+#social-cont a.social-link.linkedin:hover{background-color: #4875B4;}
+#social-cont a.social-link.quora:hover{background-color: #a82400;}
+#social-cont a.social-link.twitter:hover{background-color: #33CCFF;}
+.link-img{font-size: 20px; font-weight: bold;}
+.link-text{font-size: 12px; }
+#contact-cont{margin-top: 4%;}
+#contact-cont p{line-height: 14px;margin-bottom: 8px;}
+#contact-cont a{font-size: 16px;}
+
+#abtLeft{float: left;width: 68%;}
+.heading h1{font-weight: normal;margin: 0px;color: #333a4b;font-size: 24px;}
+.abtcontent{margin-top: 4%;font-size: 18px;line-height: 1.2em;}
+.abtcontent a{font-size: 18px;}

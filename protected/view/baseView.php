@@ -37,7 +37,8 @@ class baseView {
 		$html  = "<div class='container'>";
 		$html .= "<div class='page-header'>";
 		$html .= "<div class='head-links'>";
-		$html .= "<a href='".config::BASE_URL."/aboutus'>ABOUT</a>";
+		$html .= "<a href='".config::BASE_URL."/concept'>CONCEPT</a>";
+		$html .= "<a href='".config::BASE_URL."/about'>ABOUT ME</a>";
 		$html .= "</div>";
 		$html .= "</div>";
 		$html .= "<div class='page-body'>";

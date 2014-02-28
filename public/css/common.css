@@ -21,6 +21,10 @@ a:hover{
 	margin-top: 2%;
 }
 
+.head-links a{
+	margin-left:40px;
+}
+
 .page-body{
 	position: relative;
 }

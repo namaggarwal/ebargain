@@ -2,9 +2,6 @@
 require_once("config.php");
 require_once("router.php");
 require_once("/protected/controller/baseController.php");
-require_once("/protected/controller/homeController.php");
-require_once("/protected/controller/linkDetController.php");
-require_once("/protected/controller/addLinkController.php");
 
 class scraperApp{
 
@@ -30,6 +27,7 @@ class scraperApp{
 		$this->setRequestParams();
 		$rout = new router($this->contData);
 		$contName = $rout->getController();			
+		require_once("/protected/controller/".$contName.".php");
 		$this->cont = new $contName();
 		$this->cont->init($this->contData);
 	

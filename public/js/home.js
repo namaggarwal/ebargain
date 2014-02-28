@@ -55,7 +55,7 @@ var homePage  = (function(){
 	onInputFocus = function(event){
 
 		hideError();
-	},
+	},	
 	hideError = function(){
 		$(".error-text").fadeOut();
 	},
@@ -81,7 +81,7 @@ var homePage  = (function(){
 	},
 
 	showUrlInfo = function(url){
-		
+		$("#loadingDiv").show();
 		$.ajax({
 
 			url :common.baseUrl+"getLinkDet",
@@ -95,12 +95,19 @@ var homePage  = (function(){
 
 				data = $.parseJSON(data);
 				
-				webName.html(data["WEBSITE"]);
-				proName.html(data["PRODUCT"]);
-				proPrice.html(data["PRICE"]);
-				$("#inpProName").val(data["PRODUCT"]);
-				currPrice = parseInt(data["PRICE"],10);
-				infoBox.fadeIn();
+				$("#loadingDiv").hide();
+				if(data["CODE"] == 200){
+					webName.html(data["WEBSITE"]);
+					proName.html(data["PRODUCT"]);
+					proPrice.html(data["PRICE"]);
+					$("#inpProName").val(data["PRODUCT"]);
+					currPrice = parseInt(data["PRICE"],10);
+					infoBox.fadeIn();
+				}else{
+					$(".error-text").html(data["ERROR"]);
+					$(".error-text").fadeIn();
+				}
+				
 			},
 			error:function(err){
 				console.log(err);

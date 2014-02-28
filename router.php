@@ -11,9 +11,11 @@ class router {
 		$this->routerReq["GET"]  =  array();
 		$this->routerReq["POST"] =  array();
 
-		$this->routerReq["GET"]["/"]        = "homeController"; 
-		$this->routerReq["POST"]["/addLink"] = "addLinkController"; 
+		$this->routerReq["GET"]["/"]            = "homeController"; 
+		$this->routerReq["POST"]["/addLink"]    = "addLinkController"; 
 		$this->routerReq["POST"]["/getLinkDet"] = "linkDetController"; 
+		$this->routerReq["GET"]["/about"]       = "aboutController"; 
+		$this->routerReq["GET"]["/concept"]     = "conceptController"; 
 
 		if(is_array($this->routerReq[$pReqData["REQUEST_METHOD"]])){			
 			$this->reqData = $pReqData;

@@ -42,7 +42,10 @@ class linkDetController {
 
 		}catch(Exception $e){
 
-			print "Some error occured";
+			$this->urlDet["CODE"] = 10000;
+			$this->urlDet["ERROR"] = "This website is not supported";
+			print json_encode($this->urlDet);
+			
 		}
 		
 	}
