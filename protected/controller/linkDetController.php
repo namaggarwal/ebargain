@@ -1,6 +1,6 @@
 <?php
 
-require_once("./scraper.php");
+require_once("scraper.php");
 
 //Controller class for the home page requests
 class linkDetController {
