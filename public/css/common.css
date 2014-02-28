@@ -28,3 +28,12 @@ a:hover{
 .colorGreen{
 	color:green;
 }
+
+#page-footer{
+	text-align: center;
+	position: absolute;
+	bottom: 10px;
+	left: 0px;
+	right: 0px;
+	font-size: 12px;
+}

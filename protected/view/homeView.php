@@ -89,6 +89,7 @@ class homeView extends baseView{
 		$html .= "<img width='140px' height='50px' src='".config::BASE_URL."/public/images/myntra.jpg'></a>";
 		
 		$html .= "</div>";
+		$html .= "<div class='labelUse'>*Logos are copyrighted materials of respective owners.</div>";
 		$html .= "</div>";		
 		return $html;
 

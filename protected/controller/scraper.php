@@ -50,8 +50,9 @@ class scraper extends baseController{
 	}
 
 	private function getFlipkartLinkPrice($urlContent){
-		$regex = '/<meta itemprop=\"price\" content=\"([0-9]+[\.]?[0-9]+)\"/';
-		preg_match($regex,$urlContent,$match);
+		$regex = '/<meta itemprop=\"price\" content=\"([0-9\,]+[\.]?[0-9]+)\"/';
+		preg_match($regex,$urlContent,$match);		
+		$match[1] = preg_replace("/\,/", "", $match[1]);
 		return $match[1];
 	}
 

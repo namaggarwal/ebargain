@@ -74,6 +74,7 @@ class baseView {
 		$html  = "</div>";
 		$html .= "</div>";
 		$html .= "<div id='page-footer'>";
+		$html .= "&copy Naman Aggarwal 2014";
 		$html .= "</div>";
 
 		
