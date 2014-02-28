@@ -1,6 +1,6 @@
 <?php
 
-require_once("/protected/view/homeView.php");
+require_once(dirname(dirname(__FILE__))."/view/homeView.php");
 
 //Controller class for the home page requests
 class homeController {
