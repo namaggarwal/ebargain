@@ -13,6 +13,7 @@ class aboutController {
 	public function init($data){
 		$this->data = $data;
 		$this->viewData = $data;
+		$this->viewData["TITLE"] = "Naman Aggarwal";
 		$this->view  = new aboutView();
 		$this->view->init($this->viewData);
 	}

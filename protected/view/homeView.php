@@ -41,7 +41,7 @@ class homeView extends baseView{
 		}
 		
 		$html .= "<div class='inputDet' style='position:relative'>";
-		$html .= "<input type='url' id='inpLink' name='inpLink' required placeholder='Enter a link' value='".$params["url"]."'/>";
+		$html .= "<input type='url' id='inpLink' name='inpLink' required placeholder='Enter a product page link' value='".$params["url"]."'/>";
 		$html .= "<img height='50px' width='50px' src='".config::BASE_URL."/public/images/loading.gif' id='loadingDiv' />";
 		$html .= "<div id='infoBox'>";
 		$html .= "<div id='productDet'>";

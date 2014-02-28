@@ -6,8 +6,11 @@ class baseView {
 
 	function getCommonHead($params){
 
+		$params["TITLE"] = isset($params["TITLE"])?$params["TITLE"]:"eBargain";
+
 		$html  = "<html>";
 		$html .= "<head>";
+		$html .= "<title>".$params["TITLE"]."</title>";
 		$html .= "<link type='text/css' rel='stylesheet' href='".config::BASE_URL."/public/css/reset.css' />";
 		$html .= "<link type='text/css' rel='stylesheet' href='".config::BASE_URL."/public/css/common.css' />";
 		$html .= "<script type='text/javascript' src='".config::BASE_URL."/public/js/jquery-1.10.2.min.js'></script>";
@@ -37,8 +40,9 @@ class baseView {
 		$html  = "<div class='container'>";
 		$html .= "<div class='page-header'>";
 		$html .= "<div class='head-links'>";
-		$html .= "<a href='".config::BASE_URL."/concept'>CONCEPT</a>";
+		$html .= "<span><a id='baseLink' href='".config::BASE_URL."/'>eBargain.com</a></span>";
 		$html .= "<a href='".config::BASE_URL."/about'>ABOUT ME</a>";
+		$html .= "<a href='".config::BASE_URL."/concept'>CONCEPT</a>";
 		$html .= "</div>";
 		$html .= "</div>";
 		$html .= "<div class='page-body'>";

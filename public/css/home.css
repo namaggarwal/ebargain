@@ -26,21 +26,22 @@
 	position: absolute;
 	width: 20%;
 	height: 120px;
-	background: #b5fcb8;
+	background: #dcfdde;
 	right: 18%;
-	border:1px solid #8efa92;
+	border:1px solid #012c03;
 	display: none;
 	top:0px;
 	margin-top: 0px;
 }
 
 .hrLine{
-	border: 1px solid #8efa92;
+	border: 1px solid #012c03;
 	margin: 1px 0px;
 }
 
 .websiteName{
 
+	text-transform: capitalize;
 	text-align: center;
 	padding: 4px;
 }

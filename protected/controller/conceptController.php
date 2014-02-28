@@ -13,6 +13,7 @@ class conceptController {
 	public function init($data){
 		$this->data = $data;
 		$this->viewData = $data;
+		$this->viewData["TITLE"] = "eBargain - Concept";
 		$this->view  = new conceptView();
 		$this->view->init($this->viewData);
 	}

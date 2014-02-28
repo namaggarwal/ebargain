@@ -16,13 +16,20 @@ a:hover{
 }
 
 .head-links{
-	text-align: right;
+	overflow: auto;
 	margin-right: 10%;
 	margin-top: 2%;
+	min-height: 35px;
+
+}
+#baseLink{
+	font-size: 16px;
+	margin-left: 8%;
 }
 
-.head-links a{
+.head-links > a{
 	margin-left:40px;
+	float: right;	
 }
 
 .page-body{
