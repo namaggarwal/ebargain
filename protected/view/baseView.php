@@ -27,13 +27,21 @@ class baseView {
 	function getCommonHeadClose($params){
 
 		$html  = "</head>";
+		$html  = "<body>";
 		return $html;
 	}
 
 
 	function getCommonBody($params){
+		
+		$html  = "<div class='container'>";
+		$html .= "<div class='page-header'>";
+		$html .= "<div class='head-links'>";
+		$html .= "<a href='".config::BASE_URL."/aboutus'>ABOUT</a>";
+		$html .= "</div>";
+		$html .= "</div>";
+		$html .= "<div class='page-body'>";
 
-		$html  = "<body>";
 		return $html;
 
 	}
@@ -61,6 +69,16 @@ class baseView {
 
 	}
 
+	function getCommonPageEnd($params){
+
+		$html  = "</div>";
+		$html .= "</div>";
+		
+		return $html;
+
+	}
+
+
 	function getCommonClose($params){
 
 		$html  = "</body>";
@@ -77,9 +95,10 @@ class baseView {
 		$html .= $this->getPageSpecificHead($params);
 		$html .= $this->getCommonHeadClose($params);
 		$html .= $this->getCommonBody($params);
-		$html .= $this->getPageSpecificBody($params);		
+		$html .= $this->getPageSpecificBody($params);
+		$html .= $this->getCommonPageEnd($params);
 		$html .= $this->getCommonEndScript($params);
-		$html .= $this->getPageSpecificEndScript($params);
+		$html .= $this->getPageSpecificEndScript($params);		
 		$html .= $this->getCommonClose($params);
 
 		print $html;

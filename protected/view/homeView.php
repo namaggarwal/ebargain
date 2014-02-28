@@ -23,21 +23,27 @@ class homeView extends baseView{
 	}
 
 	function getPageSpecificBody($params){
-
-		$html  = "<div class='container'>";
-		$html .= "<div class='page-header'>";
-		$html .= "<div class='head-links'>";
-		$html .= "<a href='".config::BASE_URL."/aboutus'>ABOUT</a>";
-		$html .= "</div>";
-		$html .= "</div>";
-		$html .= "<div class='page-body'>";
-		$html .= "<div class='head-text'>";
+		
+		$html  = "<div class='head-text'>";
 		$html .= "<h1>Get Notified on Lowest Price</h1>";
 		$html .= "</div>";
 		
 		$html .= "<div>";
 
+		$html .= "<form id='frmInpLink' action='".config::BASE_URL."/addLink' method='POST'>";
+		if(isset($params["ERROR"])){
+			$html .= "<span class='error-text' style='display:inline'>";
+			$html .= $params["ERROR"];
+			$html .= "</span>";	
+		}else{
+			$html .= "<span class='error-text'>";			
+			$html .= "</span>";	
+		}
+		
+		$html .= "<div class='inputDet' style='position:relative'>";
+		$html .= "<input type='url' id='inpLink' name='inpLink' required placeholder='Enter a link' value='".$params["url"]."'/>";
 		$html .= "<div id='infoBox'>";
+		$html .= "<div id='productDet'>";
 		$html .= "<div class='websiteName'>";
 		$html .= "Flipkart";
 		$html .= "</div>";
@@ -59,30 +65,22 @@ class homeView extends baseView{
 		$html .= "</div>";		
 		$html .= "</div>";		
 		$html .= "</div>";
-		$html .= "<form id='frmInpLink' action='".config::BASE_URL."/addLink' method='POST'>";
-		if(isset($params["ERROR"])){
-			$html .= "<div class='error-text'>";
-			$html .= $params["ERROR"];
-			$html .= "</div>";	
-		}
+		$html .= "</div>";
 		
-		$html .= "<div>";
-		$html .= "<input type='url' id='inpLink' name='inpLink' required placeholder='Enter a link' value='".$params["url"]."'/>";
 		$html .= "</div>";
-		$html .= "<div>";
+		$html .= "<div class='inputDet'>";
 		$html .= "<input type='number' id='inpTarget' name='inpTarget' required placeholder='Enter your target Price' value='".$params["price"]."' />";
+		$html .= "<input type='hidden' id='inpProName' name='inpProName'/>";
 		$html .= "</div>";
-		$html .= "<div>";
+		$html .= "<div class='inputDet'>";
 		$html .= "<input type='email' id='inpEmail' name='inpEmail' required placeholder='Enter your Email to get notified.' value='".$params["email"]."'/>";
 		$html .= "</div>";
-		$html .= "<div>";
+		$html .= "<div class='inputDet'>";
 		$html .= "<input class='btnSubmit' type='submit' value='Notify me'>";
 		$html .= "</div>";
 		$html .= "</form>";
 		$html .= "</div>";
-		$html .= "</div>";
-		$html .= "</div>";
-
+		
 		return $html;
 
 	}

@@ -20,6 +20,7 @@ class addLinkController extends baseController{
 		$this->data["url"] = $_REQUEST["inpLink"];
 		$this->data["price"] = $_REQUEST["inpTarget"];
 		$this->data["email"] = $_REQUEST["inpEmail"];
+		$this->data["product"] = $_REQUEST["inpProName"];
 		
 	}
 
@@ -38,16 +39,28 @@ class addLinkController extends baseController{
 		$this->getRequestParams();		
 		$host = $this->getHost($this->data["url"]);
 		$is_valid_host = $this->checkIfValidHost($host);
+		if(!$is_valid_host){
+			$err = "<span>Oops we are not currently supporting this website.</span><br/>";
+		}
 
-		if($is_valid_host){
+		if(!is_numeric($this->data['price'])){
+			$err .= "<span>There is some problem with the price that you entered.</span><br/>";
+		}
+
+		if(!filter_var($this->data['email'], FILTER_VALIDATE_EMAIL)){
+			$err .= "<span>There is some problem with the email that you entered.</span><br/>";
+		}
+
+		if(!isset($err)){
 			$this->dbConn = $this->acquireDbConn();
 			$this->tryToAddLink($this->data["url"],$host);
 			$this->view  = new linkAddedView();
+			$this->viewData = $this->data;
 			$this->view->init($this->viewData);
 		}else{
 			$this->view  = new homeView();
 			$this->viewData = $this->data;
-			$this->viewData["ERROR"] = "Oops we are not currently supporting this website.";
+			$this->viewData["ERROR"] = $err;
 			$this->view->init($this->viewData);			
 		}
 

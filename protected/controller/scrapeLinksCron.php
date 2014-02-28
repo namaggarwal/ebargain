@@ -35,8 +35,29 @@ class scrapeLinksCron extends baseController{
 
 		}
 
+		$this->setDeleteFlag();
+
 	}
 	
+
+	private function setDeleteFlag(){
+
+		if(count($this->contactIdForDeletions)!=0){
+
+			$contactModel = new tblContactModel($this->dbConn);
+			$contactModel->markContactsForDeletion($this->contactIdForDeletions);
+
+		}
+
+		if(count($this->linkIdForDeletions)!=0){
+
+			$contactModel = new tblLinkModel($this->dbConn);
+			$contactModel->markLinksForDeletion($this->linkIdForDeletions);
+
+		}
+
+	}
+
 	private function comparePriceAndSendMail($linkId,$curr_price,$name){
 
 		$contactModel = new tblContactModel($this->dbConn);

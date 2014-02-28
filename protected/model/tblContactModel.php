@@ -35,4 +35,11 @@ class tblContactModel{
 		
 	}
 
+	public function markContactsForDeletion($id_array){
+
+		$query = "Update tblcontact set delete_flag=1 where id in (".implode(",", $id_array).");";
+		$this->dbConn->query($query);
+		
+	}
+
 }

@@ -1,0 +1,16 @@
+.page-body{
+	margin-top:4%;
+}
+
+#msg{
+	text-align: center;
+}
+
+#goback{
+	text-align: center;
+	margin-top: 2%;
+}
+
+#goback a{
+	font-size: 16px;
+}

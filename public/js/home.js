@@ -1,10 +1,40 @@
 var homePage  = (function(){
 
+	var currPrice = 0;
 
 	//Private functions
 	var attachEvents = function(){
 
 		$("#inpLink").on("change",onInputUrlChange);
+		$("#frmInpLink").on("submit",onSubmitClick);
+		$("input").on("focus",onInputFocus);
+
+	},
+	onSubmitClick = function(event){
+		var targetPrice = parseInt($("#inpTarget").val(),0);
+		console.log(targetPrice,currPrice);
+		if(currPrice == 0){
+			$(".error-text").html("We do not support this website at this time.");
+			$(".error-text").fadeIn();
+			event.preventDefault();
+			event.stopPropagation();
+			return false;
+
+		}
+		else if(targetPrice >= currPrice){
+			$(".error-text").html("Current price of the product is already lower.");
+			$(".error-text").fadeIn();
+			event.preventDefault();
+			event.stopPropagation();
+			return false;
+
+		}
+		if(!$(this)[0].checkValidity()){
+			return false;
+		}
+
+		//return false;
+		
 
 	},
 	onInputUrlChange = function(event){
@@ -21,6 +51,13 @@ var homePage  = (function(){
 
 
 
+	},
+	onInputFocus = function(event){
+
+		hideError();
+	},
+	hideError = function(){
+		$(".error-text").fadeOut();
 	},
 	// taken from stackoverflow 
 	// give credits
@@ -40,6 +77,7 @@ var homePage  = (function(){
 	},
 	hideInfo = function(){
 		$("#infoBox").fadeOut();
+		currPrice = 0;
 	},
 
 	showUrlInfo = function(url){
@@ -53,13 +91,15 @@ var homePage  = (function(){
 				var infoBox = $("#infoBox"),
 					webName = infoBox.find(".websiteName"),
 					proName = infoBox.find(".proName"),
-					proPrice = infoBox.find(".proPrice");
+					proPrice = infoBox.find(".proPrice");					
 
 				data = $.parseJSON(data);
 				
 				webName.html(data["WEBSITE"]);
 				proName.html(data["PRODUCT"]);
 				proPrice.html(data["PRICE"]);
+				$("#inpProName").val(data["PRODUCT"]);
+				currPrice = parseInt(data["PRICE"],10);
 				infoBox.fadeIn();
 			},
 			error:function(err){

@@ -33,4 +33,11 @@ class tblLinkModel{
 		
 	}	
 
+
+	public function markLinksForDeletion($id_array){
+
+		$query = "Update tbllink set delete_flag=1 where id in (".implode(",", $id_array).");";
+		$this->dbConn->query($query);
+		
+	}
 }

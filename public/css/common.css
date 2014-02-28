@@ -14,3 +14,17 @@ a:hover{
 .page-header{
 	padding: 2%;
 }
+
+.head-links{
+	text-align: right;
+	margin-right: 10%;
+	margin-top: 2%;
+}
+
+.page-body{
+	position: relative;
+}
+
+.colorGreen{
+	color:green;
+}
