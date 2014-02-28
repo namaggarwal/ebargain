@@ -1,6 +1,6 @@
 <?php
 
-require_once("../view/conceptView.php");
+require_once(dirname(dirname(__FILE__))."/view/conceptView.php");
 
 //Controller class for the home page requests
 class conceptController {
