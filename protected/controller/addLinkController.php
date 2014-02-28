@@ -1,9 +1,9 @@
 <?php
 
-require_once("/protected/view/linkAddedView.php");
-require_once("/protected/view/homeView.php");
-require_once("/protected/model/tblLinkModel.php");
-require_once("/protected/model/tblContactModel.php");
+require_once(dirname(dirname(__FILE__))."/view/linkAddedView.php");
+require_once(dirname(dirname(__FILE__))."/view/homeView.php");
+require_once(dirname(dirname(__FILE__))."/model/tblLinkModel.php");
+require_once(dirname(dirname(__FILE__))."/model/tblContactModel.php");
 
 //Controller class for the home page requests
 class addLinkController extends baseController{
