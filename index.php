@@ -27,7 +27,7 @@ class scraperApp{
 		$this->setRequestParams();
 		$rout = new router($this->contData);
 		$contName = $rout->getController();			
-		require_once("/protected/controller/".$contName.".php");
+		require_once("./protected/controller/".$contName.".php");
 		$this->cont = new $contName();
 		$this->cont->init($this->contData);
 	
