@@ -14,6 +14,7 @@ class scraper extends baseController{
 	private function getPriceFromUrlContent($host,$urlContent){
 
 		switch (strtoupper($host)) {
+			case 'MYNTRA':
 			case 'FLIPKART':
 				# code...
 					return $this->getFlipkartLinkPrice($urlContent);
@@ -30,6 +31,7 @@ class scraper extends baseController{
 	private function getProductFromUrlContent($host,$urlContent){
 
 		switch (strtoupper($host)) {
+			case 'MYNTRA':
 			case 'FLIPKART':
 				# code...
 					return $this->getFlipkartProductName($urlContent);
@@ -48,7 +50,7 @@ class scraper extends baseController{
 	}
 
 	private function getFlipkartLinkPrice($urlContent){
-		$regex = '/<span class=\"[a-zA-z\- ]+pprice [a-zA-z\- ]+\">[A-Za-z\. ]+([\d]+)<\/span>/';
+		$regex = '/<meta itemprop=\"price\" content=\"([0-9]+[\.]?[0-9]+)\"/';
 		preg_match($regex,$urlContent,$match);
 		return $match[1];
 	}

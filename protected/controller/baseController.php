@@ -3,7 +3,7 @@
 class baseController{
 
 
-	private $supported_hosts = array("FLIPKART");
+	private $supported_hosts = array("FLIPKART","MYNTRA");
 
 	public function prettyPrint($data){
 

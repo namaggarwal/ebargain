@@ -85,7 +85,7 @@ class homeView extends baseView{
 		$html .= "<div class='websiteCont'>";
 		
 		$html .= "<img width='100px' height='50px' src='".config::BASE_URL."/public/images/flipkart.png'></a>";
-		$html .= "<img width='100px' height='50px' src='".config::BASE_URL."/public/images/amazon.jpg'></a>";
+		/*$html .= "<img width='100px' height='50px' src='".config::BASE_URL."/public/images/amazon.jpg'></a>";*/
 		$html .= "<img width='140px' height='50px' src='".config::BASE_URL."/public/images/myntra.jpg'></a>";
 		
 		$html .= "</div>";
