@@ -1,7 +1,7 @@
 <?php
 
 
-require_once("./baseController.php");
+require_once("baseController.php");
 
 class scraper extends baseController{
 	
