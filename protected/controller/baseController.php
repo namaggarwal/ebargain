@@ -16,7 +16,7 @@ class baseController{
 	public function acquireDbConn(){
 
 		try {
-			$link = mysqli_connect("localhost","naman","IAMTHEBEST","scraperpy");
+			$link = mysqli_connect(config::HOST,config::DB_USERNAME,config::DB_PASSWORD,config::DB_NAME);
 
 		}catch(Exception $exp){
 

@@ -1,5 +1,5 @@
 <?php
-
+require_once("../../Config.php");
 require_once("baseController.php");
 require_once("scraper.php");
 require_once("../model/tblLinkModel.php");

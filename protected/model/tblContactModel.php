@@ -13,7 +13,7 @@ class tblContactModel{
 
 	public function getContactsByLinkId($linkId){
 
-		$query = "Select * from tblcontact where linkid=".$linkId." and delete_flag=0";
+		$query = "Select * from ".config::CONTACT_TAB_NAME." where linkid=".$linkId." and delete_flag=0";
 		$result = $this->dbConn->query($query);
 		//Returns 0 if query fails
 		return $result;
@@ -23,7 +23,7 @@ class tblContactModel{
 
 	public function addTargetEmail($email,$price,$linkId){
 
-		$query = "INSERT into tblcontact(email,linkid,target) 
+		$query = "INSERT into ".config::CONTACT_TAB_NAME."(email,linkid,target) 
 				  values ('".$email."',
 			  			   ".$linkId.",
 				           ".$price."
@@ -37,7 +37,7 @@ class tblContactModel{
 
 	public function markContactsForDeletion($id_array){
 
-		$query = "Update tblcontact set delete_flag=1 where id in (".implode(",", $id_array).");";
+		$query = "Update ".config::CONTACT_TAB_NAME." set delete_flag=1 where id in (".implode(",", $id_array).");";
 		$this->dbConn->query($query);
 		
 	}
