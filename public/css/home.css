@@ -77,3 +77,20 @@ span.error-text{
 	border: 1px solid #ef999d;
 	display: none;
 }
+
+#supportedWeb{
+	width: 80%;
+	margin: auto;
+	margin-top: 4%;
+	color: #91a8ba;
+	text-align: center;
+}
+.websiteCont{
+	overflow: auto;
+	margin-top:2%;
+}
+
+.websiteCont img{
+	margin-left: 3%;
+}
+

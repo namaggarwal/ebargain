@@ -73,6 +73,9 @@ class baseView {
 
 		$html  = "</div>";
 		$html .= "</div>";
+		$html .= "<div id='page-footer'>";
+		$html .= "</div>";
+
 		
 		return $html;
 
