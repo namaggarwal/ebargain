@@ -1,6 +1,6 @@
 <?php
 
-require_once("/protected/view/aboutView.php");
+require_once("../view/aboutView.php");
 
 //Controller class for the home page requests
 class aboutController {

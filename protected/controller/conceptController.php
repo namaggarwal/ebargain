@@ -1,6 +1,6 @@
 <?php
 
-require_once("/protected/view/conceptView.php");
+require_once("../view/conceptView.php");
 
 //Controller class for the home page requests
 class conceptController {
