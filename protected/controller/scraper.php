@@ -58,7 +58,7 @@ class scraper extends baseController{
 
 	private function getFlipkartProductName($urlContent){
 
-		$regex = '/<h1 itemprop=\"name\">([a-zA-z0-9\s]+)<\/h1>/';
+		$regex = '/<h1 itemprop=\"name\">([a-zA-z0-9\s\-]+)<\/h1>/';
 		preg_match($regex,$urlContent,$match);	
 		return trim($match[1]);
 
